@@ -142,7 +142,7 @@ tutorial_main (int argc, char *argv[])
   g_io_add_watch (io_stdin, G_IO_IN, (GIOFunc) handle_keyboard, &data);
   GstElement *source = gst_element_factory_make ("videotestsrc", "source");
   GstElement *sink = gst_element_factory_make ("autovideosink", "sink");
-  GstElement *mplugin = gst_element_factory_make ("plugin", "mplugin");
+  GstElement *mplugin = gst_element_factory_make ("myfilter", "myfilter");
  if (!data.pipeline || !sink || !mplugin) {
     g_printerr ("Not all elements could be created.\n");
     return -1;
